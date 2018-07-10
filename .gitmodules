@@ -1,0 +1,9 @@
+[submodule "hdxscraper-fts"]
+	path = hdxscraper-fts
+	url = https://github.com/OCHA-DAP/hdxscraper-fts.git
+[submodule "hdxscraper-acled"]
+	path = hdxscraper-acled
+	url = https://github.com/OCHA-DAP/hdxscraper-acled.git
+[submodule "hdxscraper-unesco"]
+	path = hdxscraper-unesco
+	url = https://github.com/OCHA-DAP/hdxscraper-unesco.git
