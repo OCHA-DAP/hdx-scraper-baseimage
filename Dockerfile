@@ -11,4 +11,4 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk
     rm -r /root/.cache && \
     rm -rf /var/lib/apk/*
 
-CMD ["python3", "-m", "hdx.freshness"]
+CMD ["sh", "/root/OCHA*/run.sh", "hdxscraper-fts"]
