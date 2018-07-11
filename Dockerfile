@@ -2,11 +2,10 @@ FROM mcarans/hdx-python-api
 
 MAINTAINER Michael Rans <rans@email.com>
 
-RUN apk add --no-cache --update git && \
-    git clone https://github.com/OCHA-DAP/hdxscraper-docker.git --single-branch && \
-    cd hdxscraper-docker && \
-    pip --no-cache-dir install -r requirements.txt && \
-    apk del git && \
+RUN curl -L https://github.com/OCHA-DAP/hdxscraper-docker/tarball/master | tar xz -C /root && \
+    cd /root/OCHA* && \
+    pip --no-cache-dir install cython && \
+    pip --no-cache-dir install --no-build-isolation -r requirements.txt && \
     rm -r /root/.cache && \
     rm -rf /var/lib/apk/*
 
