@@ -19,6 +19,7 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk
     cd /root/hdxscraper-docker && \
     curl -L https://github.com/OCHA-DAP/hdxscraper-docker/tarball/master | \
         tar xz -C . --strip-components=1 && \
+    chmod a+x /root/hdxscraper-docker/run.sh && \
     apk add --no-cache --update build-base python3-dev py3-numpy@edge py-numpy-dev@edge py3-scipy@edge && \ 
     pip --no-cache-dir install --no-build-isolation -r requirements.txt && \
     apk del build-base python3-dev py-numpy-dev && \
