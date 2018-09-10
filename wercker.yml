@@ -1,6 +1,7 @@
 # Read more about containers on our dev center
 # https://devcenter.wercker.com/overview-and-core-concepts/containers/
-box: mcarans/hdxscraper-docker
+box: mcarans/hdxscraper-docker:latest
+entrypoint: /bin/sh -c
 
 # Read more about pipelines on our dev center
 # https://devcenter.wercker.com/development/pipelines/
