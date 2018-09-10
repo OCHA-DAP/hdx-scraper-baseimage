@@ -13,5 +13,6 @@ build:
   steps:
     - script:
         name: starting fts
-        code: echo hi
+        code: echo $KEY
+#        code: /root/hdxscraper-docker/run.sh $KEY hdxscraper-fts > ~/testfts.log 2>&1
 
