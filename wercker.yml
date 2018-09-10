@@ -1,0 +1,14 @@
+# Read more about containers on our dev center
+# https://devcenter.wercker.com/overview-and-core-concepts/containers/
+box: mcarans/hdxscraper-docker
+
+# Read more about pipelines on our dev center
+# https://devcenter.wercker.com/development/pipelines/
+build:
+  # The steps that will be executed on build
+  # Steps make up the actions in your pipeline
+  # Read more about steps on our dev center:
+  # https://devcenter.wercker.com/development/steps/
+  steps:
+    - /root/hdxscraper-docker/run.sh $KEY hdxscraper-fts > ~/testfts.log 2>&1
+
