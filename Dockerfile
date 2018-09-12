@@ -15,7 +15,8 @@ RUN apk add --no-cache --upgrade python3 build-base musl-dev python3-dev libffi-
     git clone https://github.com/OCHA-DAP/hdxscraper-acled && \
     git clone https://github.com/OCHA-DAP/hdxscraper-unesco && \
     git clone https://github.com/OCHA-DAP/hdxscraper-docker && \
-    chmod a+x hdxscraper-docker/run.sh && \
+    cd hdxscraper-docker && \
+    chmod a+x run.sh && \
     apk add --no-cache --update build-base python3-dev py3-numpy@edge py-numpy-dev@edge py3-scipy@edge && \ 
     pip --no-cache-dir install --no-build-isolation -r requirements.txt && \
     apk del build-base python3-dev py-numpy-dev git && \
