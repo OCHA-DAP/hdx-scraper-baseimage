@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /root
-curl -H "Authorization: token $1" -L https://api.github.com/repos/UN-OCHA/hdxscraper-docker-private/tarball/master | tar xz -C . --strip-components=1
+git clone https://$1@github.com/UN-OCHA/hdxscraper-docker-private.git
 cd $2
 python3 run.py
 

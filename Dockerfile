@@ -19,7 +19,7 @@ RUN apk add --no-cache --upgrade python3 build-base musl-dev python3-dev libffi-
     chmod a+x run.sh && \
     apk add --no-cache --update build-base python3-dev py3-numpy@edge py-numpy-dev@edge py3-scipy@edge && \ 
     pip --no-cache-dir install --no-build-isolation -r requirements.txt && \
-    apk del build-base python3-dev py-numpy-dev git && \
+    apk del build-base python3-dev py-numpy-dev && \
     rm -r .cache && \
     rm -rf /var/lib/apk/*
 
