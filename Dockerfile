@@ -26,5 +26,5 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk
     rm -rf /srv/* && \
     apk del \
         .build-deps \
-        py-numpy-dev@edge && \
+        py-numpy-dev && \
     rm -rf /var/lib/apk/*
