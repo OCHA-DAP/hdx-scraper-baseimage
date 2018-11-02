@@ -24,5 +24,7 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk
     pip3 install --upgrade pip && \
     pip --no-cache-dir install --no-build-isolation -r requirements.txt && \
     rm -rf /srv/* && \
-    apk del .build-deps && \
+    apk del \
+        .build-deps \
+        py-numpy-dev@edge && \
     rm -rf /var/lib/apk/*
