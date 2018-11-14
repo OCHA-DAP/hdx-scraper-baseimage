@@ -12,10 +12,10 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk
     apk add --no-cache --upgrade --virtual .build-deps \
         build-base \
         libffi-dev \
+        libressl-dev \
         libxml2-dev \
         libxslt-dev \
         musl-dev \
-        openssl-dev \
         postgresql-dev \
         python3-dev && \
     apk add --no-cache --upgrade \
