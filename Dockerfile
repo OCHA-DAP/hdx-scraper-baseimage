@@ -16,6 +16,7 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk
         libxslt-dev \
         musl-dev \
         openssl-dev \
+        postgresql-dev \
         python3-dev && \
     apk add --no-cache --upgrade \
         py3-numpy@edge \
