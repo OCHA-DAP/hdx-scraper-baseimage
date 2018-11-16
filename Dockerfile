@@ -1,31 +1,15 @@
-FROM unocha/alpine-base:3.8
+FROM unocha/hdx-pandas-baseimage:stable
 
 WORKDIR /srv
 
 COPY . .
 
-RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    apk add --no-cache --upgrade \
-        libgfortran \
-        libstdc++ \
-        python3 && \
-    apk add --no-cache --upgrade --virtual .build-deps \
+RUN apk add --no-cache --upgrade --virtual .build-deps \
         build-base \
         libffi-dev \
-        libressl-dev \
-        libxml2-dev \
-        libxslt-dev \
-        musl-dev \
         postgresql-dev \
         python3-dev && \
-    apk add --no-cache --upgrade \
-        py3-numpy@edge \
-        py3-scipy@edge \
-        py-numpy-dev@edge && \
-    pip3 install --upgrade pip && \
     pip --no-cache-dir install --no-build-isolation -r requirements.txt && \
     rm -rf /srv/* && \
-    apk del \
-        .build-deps \
-        py-numpy-dev && \
+    apk del .build-deps && \
     rm -rf /var/lib/apk/*
