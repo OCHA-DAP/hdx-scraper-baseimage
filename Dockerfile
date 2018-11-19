@@ -11,5 +11,6 @@ RUN apk add --no-cache --upgrade --virtual .build-deps \
         python3-dev && \
     pip --no-cache-dir install -r requirements.txt && \
     rm -rf /srv/* && \
+    mkdir /srv/tmp && \
     apk del .build-deps && \
     rm -rf /var/lib/apk/*
