@@ -1,2 +1,2 @@
 python-slugify==3.0.2
-hdx-python-api==3.6.4
+hdx-python-api==3.6.7
