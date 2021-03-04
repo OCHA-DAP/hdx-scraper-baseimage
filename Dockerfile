@@ -23,5 +23,6 @@ RUN apk add --no-cache --upgrade \
     mkdir /srv/tmp && \
     apk del .build-deps1 && \
     apk del .build-deps2 && \
-    rm -rf /var/lib/apk/*
+    rm -rf ./target ~/.cargo /var/lib/apk/*
+
 
