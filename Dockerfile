@@ -7,10 +7,12 @@ COPY . .
 RUN apk add --no-cache --upgrade \
         python3 \
         py3-pip && \
-    apk add --no-cache --upgrade -X http://dl-cdn.alpinelinux.org/alpine/edge/community --virtual .build-deps1 \
+    apk add --no-cache --upgrade -X http://dl-cdn.alpinelinux.org/alpine/edge/main --virtual .build-deps1 \
+        llvm11-libs && \
+    apk add --no-cache --upgrade -X http://dl-cdn.alpinelinux.org/alpine/edge/community --virtual .build-deps2 \
         py3-wheel \
         cargo && \
-    apk add --no-cache --upgrade --virtual .build-deps2 \
+    apk add --no-cache --upgrade --virtual .build-deps3 \
         build-base \
         libffi-dev \
         postgresql-dev \
@@ -23,6 +25,7 @@ RUN apk add --no-cache --upgrade \
     mkdir /srv/tmp && \
     apk del .build-deps1 && \
     apk del .build-deps2 && \
+    apk del .build-deps3 && \
     rm -rf ./target ~/.cargo /var/lib/apk/*
 
 
