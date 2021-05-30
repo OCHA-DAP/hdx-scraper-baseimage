@@ -20,7 +20,7 @@ RUN apk add --no-cache --upgrade \
     apk add --no-cache --upgrade -X http://dl-cdn.alpinelinux.org/alpine/edge/community \
         py3-pandas && \
     pip3 --no-cache-dir install --upgrade pip && \
-    pip --no-cache-dir install -r requirements.txt && \
+    pip --no-cache-dir install -r requirements.txt --ignore-installed six && \
     rm -rf /srv/* && \
     mkdir /srv/tmp && \
     apk del .build-deps1 && \
