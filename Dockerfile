@@ -7,6 +7,7 @@ COPY . .
 RUN apk add --no-cache --upgrade \
         python3 \
         py3-pip \
+        libxslt \
         py3-pandas && \
     apk add --no-cache --upgrade --virtual .build-deps \
         build-base \
