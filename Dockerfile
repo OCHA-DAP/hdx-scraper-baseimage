@@ -6,7 +6,8 @@ COPY . .
 
 RUN apk add --no-cache --upgrade \
         python3 \
-        py3-pip && \
+        py3-pip \
+        py3-pandas && \
     apk add --no-cache --upgrade --virtual .build-deps \
         build-base \
         cargo \
@@ -16,10 +17,8 @@ RUN apk add --no-cache --upgrade \
         llvm11-libs \
         postgresql-dev \
         python3-dev \
-        py3-pandas \
         py3-wheel && \
-    pip3 --no-cache-dir install --upgrade pip && \
-    pip --no-cache-dir install -r requirements.txt --ignore-installed six && \
+    pip --no-cache-dir install --upgrade -r requirements.txt --ignore-installed six && \
     rm -rf /srv/* && \
     mkdir /srv/tmp && \
     apk del .build-deps && \
