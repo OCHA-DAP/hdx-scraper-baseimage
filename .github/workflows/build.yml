@@ -6,6 +6,7 @@ on:
       - dev
       - main
       - prod
+      - stable
   release:
     types: [published]
 
