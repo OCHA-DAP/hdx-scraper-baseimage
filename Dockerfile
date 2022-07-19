@@ -1,4 +1,4 @@
-FROM public.ecr.aws/unocha/alpine-base:3.15-202203-01
+FROM public.ecr.aws/unocha/alpine-base:3.16
 
 WORKDIR /srv
 
