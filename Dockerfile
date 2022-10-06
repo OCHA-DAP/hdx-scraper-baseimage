@@ -1,12 +1,10 @@
-FROM public.ecr.aws/unocha/alpine-base:3.16
+FROM public.ecr.aws/unocha/python:3-base
 
 WORKDIR /srv
 
 COPY . .
 
 RUN apk add --no-cache --upgrade \
-        python3 \
-        py3-pip \
         libxslt && \
     apk add --no-cache --upgrade --virtual .build-deps \
         build-base \
