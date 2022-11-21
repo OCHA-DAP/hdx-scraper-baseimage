@@ -1,6 +1,7 @@
 name: Create image
 
 on:
+  workflow_dispatch: # add run button in github
   push:
     branches:
       - dev
