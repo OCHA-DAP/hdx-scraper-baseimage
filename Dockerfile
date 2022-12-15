@@ -15,7 +15,7 @@ RUN apk add --no-cache --upgrade \
         openssl-dev \
         python3-dev \
         py3-wheel && \
-    pip --no-cache-dir install --upgrade -r requirements.txt && \
+    pip --no-cache-dir install --upgrade -r requirements.txt --ignore-installed six && \
     rm -rf /srv/* && \
     mkdir /srv/tmp && \
     apk del .build-deps && \
