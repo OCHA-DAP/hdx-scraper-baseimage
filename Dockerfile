@@ -5,7 +5,8 @@ WORKDIR /srv
 COPY . .
 
 RUN apk add --no-cache --upgrade \
-        libxslt && \
+        libxslt  \
+        py3-six && \
     apk add --no-cache --upgrade --virtual .build-deps \
         build-base \
         cargo \
@@ -15,7 +16,7 @@ RUN apk add --no-cache --upgrade \
         openssl-dev \
         python3-dev \
         py3-wheel && \
-    pip --no-cache-dir install --upgrade -r requirements.txt --ignore-installed six && \
+    pip --no-cache-dir install --upgrade -r requirements.txt && \
     rm -rf /srv/* && \
     mkdir /srv/tmp && \
     apk del .build-deps && \
